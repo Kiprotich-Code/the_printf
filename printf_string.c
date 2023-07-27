@@ -29,35 +29,6 @@ int printf_string(va_list val)
 	}
 }
 
-
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-
-/**
- * printf_char - prints a char.
- * @val: arguments.
- * Return: 1.
- */
-int printf_char(va_list val)
-{
-	char s;
-
-	s = va_arg(val, int);
-	_putchar(s);
-	return (1);
-}
-
-
 /**
  * _strlen - Returns the lenght of a string.
  * @s: Type char pointer
@@ -71,4 +42,19 @@ int _strlen(char *s)
 		;
 	return (c);
 
+}
+
+
+/**
+ * _strlenc - Strlen function but applied for constant char pointer s
+ * @s: Type char pointer
+ * Return: c
+ */
+int _strlenc(const char *s)
+{
+	int c;
+
+	for (c = 0; s[c] != 0; c++)
+		;
+	return (c);
 }
