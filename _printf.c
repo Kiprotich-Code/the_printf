@@ -9,7 +9,7 @@
 int _printf(const char * const format, ...)
 {
     conv_match m[] = {
-        {"%s", print_string}, {"%c", print_char}
+        {"%s", printf_string}, {"%c", printf_char}
     };
 
     va_list args;
